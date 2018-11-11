@@ -1,0 +1,24 @@
+body {
+	user-select: none;
+	background-color: white;
+}
+
+.navbar-fixed {
+	-webkit-app-region: drag;
+}
+
+.container {
+	width: 85%;
+}
+
+.modal {
+	line-height: normal;
+}
+
+.page-footer {
+	padding: 0px;
+}
+
+.share-buttons-box {
+	background-color: gray;
+}

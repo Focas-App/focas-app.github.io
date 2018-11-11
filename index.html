@@ -1,1 +1,279 @@
-Hello!
+<!DOCTYPE html>
+
+<!-- TODO Change colour. Don't use 'teal' or 'blue' -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Fócas App - Background noises to improve productivity and help you focus on getting things done</title>
+		<link rel="shortcut icon" href="icon-2.png" />
+		
+		<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+		<link rel="stylesheet" type="text/css" href="css/material_icons.css">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<!-- <script type="text/javascript" src="js/Pizzicato.min.js"></script> -->
+		<!-- <script type="text/javascript" src="js/obair.js"></script> -->
+		<script type="text/javascript" src="js/focas.js"></script>
+		<script type="text/javascript" src="js/howler.min.js"></script>
+	</head>
+
+	<body>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper blue titlebar">
+					<a href="#!" class="brand-logo center">Fócas</a>
+					<ul class="right hide-on-med-and-down">
+						<!-- <li><a href="#"><i class="material-icons">search</i></a></li> -->
+						<li><a class="waves-effect" id='favorite-button'><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Save the current sounds as a favorite setup" title="Save the current sounds as a favorite setup">favorite_border</i></a></li>
+						<li><a class="waves-effect" id="shuffle-button"><i class="material-icons tooltipped" data-position="bottom" data-tooltip="Randomly play sounds" title="Randomly play sounds">shuffle</i></a></li>
+						<li><a class="waves-effect" id='mute-button'><i class="material-icons">volume_up</i></a></li>
+						<li><a class="waves-effect dropdown-trigger" id='menu-button' href='#' data-target='menu-dropdown'><i class="material-icons">more_vert</i></a></li>
+
+						<!-- Dropdown Menu -->
+						<ul id='menu-dropdown' class='dropdown-content'>
+							<li><a href="#">Fócas</a></li>
+							<li class="divider" tabindex="-1"></li>
+							<li><a href="#" class="modal-trigger" id="about-button" data-target="about-modal">About</a></li>
+							<li><a href="#">Feedback</a></li>
+							<li><a href="#">Github</a></li>
+							<li><a href="#">Share on Twitter</a></li>
+						</ul>
+
+						<!-- About Modal -->
+						<div id="about-modal" class="modal blue">
+							<div class="modal-content">
+								<h4>Fócas</h4>
+								<p>.......</p>
+								<p>Howler.js</p>
+								<p>jQuery</p>
+								<p>Materalize</p>
+								<p><strong>Jamie McGowan (2018)</strong></p>
+
+							</div>
+							<div class="modal-footer">
+							<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+							</div>
+						</div>
+
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<br>
+		
+		<!-- Row with full width horizontal ad -->
+		<div class="row">
+			<div class="col s12">
+				<div class="container">
+					<div class="row center">
+						<div class="col s12">
+							<!-- Space for horizontal full width ad -->
+							<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							<ins class="adsbygoogle"
+								style="display:block"
+								data-ad-client="ca-pub-1941197189172711"
+								data-ad-slot="7369259991"
+								data-ad-format="auto"
+								data-full-width-responsive="true"></ins>
+							<script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+							</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Row with 3 sound cards -->
+		<div class="row">
+			<div class="col s12"> 
+				<div class="container">
+					<div class="row center">
+						<div class="col s4">
+							<div class="card" title="Rain">
+								<div class="card-image">
+									<img src="images/rain.svg" alt="Rain">
+									<a class="btn-floating halfway-fab waves-effect waves-light blue button-play" data-sound="rain"><i class="material-icons">play_arrow</i></a>
+								</div>
+								<div class="card-content">
+									<form action="#">
+										<p class="range-field">
+											<input class="volume-slider" type="range" data-sound="rain" min="0" max="100" value="100"/>
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="card" title="Thunder">
+								<div class="card-image">
+									<img src="images/thunder.svg" alt="Thunder">
+									<a class="btn-floating halfway-fab waves-effect waves-light blue button-play" data-sound='thunder'><i class="material-icons">play_arrow</i></a>
+								</div>
+								<div class="card-content">
+									<form action="#">
+										<p class="range-field">
+											<input class="volume-slider" type="range" data-sound="thunder" min="0" max="100" value="100"/>
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="card" title="Wind">
+								<div class="card-image">
+									<img src="images/wind.svg" alt="Wind">
+									<a class="btn-floating halfway-fab waves-effect waves-light blue button-play" data-sound="wind"><i class="material-icons">play_arrow</i></a>
+								</div>
+								<div class="card-content">
+									<form action="#">
+										<p class="range-field">
+											<input class="volume-slider" type="range" data-sound="wind" min="0" max="100" value="100"/>
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Row with 3 sound cards -->
+		<div class="row">
+			<div class="col s12"> 
+				<div class="container">
+					<div class="row center">
+						<div class="col s4">
+							<div class="card" title="Fire">
+								<div class="card-image">
+									<img src="images/fire.svg" alt="Fire">
+									<a class="btn-floating halfway-fab waves-effect waves-light blue button-play" data-sound="fire"><i class="material-icons">play_arrow</i></a>
+								</div>
+								<div class="card-content">
+									<form action="#">
+										<p class="range-field">
+											<input class="volume-slider" type="range" data-sound="fire" min="0" max="100" value="100"/>
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="card" title="Train Tracks">
+								<div class="card-image">
+									<img src="images/rail.svg" alt="Train Tracks">
+									<h1>Rail</h1>
+									<a class="btn-floating halfway-fab waves-effect waves-light blue button-play" data-sound='rail'><i class="material-icons">play_arrow</i></a>
+								</div>
+								<div class="card-content">
+									<form action="#">
+										<p class="range-field">
+											<input class="volume-slider" type="range" data-sound="rail" min="0" max="100" value="100"/>
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col s4">
+							<div class="card" title="Coffee Shop">
+								<div class="card-image">
+									<img src="images/coffee.svg" alt="Coffee Shop">
+									<a class="btn-floating halfway-fab waves-effect waves-light blue button-play" data-sound="coffee"><i class="material-icons">play_arrow</i></a>
+								</div>
+								<div class="card-content">
+									<form action="#">
+										<p class="range-field">
+											<input class="volume-slider" type="range" data-sound="coffee" min="0" max="100" value="100"/>
+										</p>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Row with 1 sound card and 2 ad cards -->
+		<div class="row">
+				<div class="col s12"> 
+					<div class="container">
+						<div class="row center">
+							<div class="col s4">
+								<div class="card">
+									<!-- Square card ad -->
+									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<ins class="adsbygoogle"
+										style="display:block"
+										data-ad-client="ca-pub-1941197189172711"
+										data-ad-slot="7369259991"
+										data-ad-format="auto"
+										data-full-width-responsive="true"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script>
+								</div>
+							</div>
+							<div class="col s4">
+								<div class="card" title="White Noise">
+									<div class="card-image">
+										<img src="images/white-noiese.svg" alt="Train Tracks">
+										<h1>White Noise</h1>
+										<a class="btn-floating halfway-fab waves-effect waves-light blue button-play" data-sound='white-noise'><i class="material-icons">play_arrow</i></a>
+									</div>
+									<div class="card-content">
+										<form action="#">
+											<p class="range-field">
+												<input class="volume-slider" type="range" data-sound="white-noise" min="0" max="100" value="100"/>
+											</p>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col s4">
+								<div class="card">
+									<!-- Square card ad -->
+									<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<ins class="adsbygoogle"
+										style="display:block"
+										data-ad-client="ca-pub-1941197189172711"
+										data-ad-slot="7369259991"
+										data-ad-format="auto"
+										data-full-width-responsive="true"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Check out Fócas app - Background noises to improve productivity and help you focus on getting things done" data-url="https://focas-app.github.io/" data-via="_jamiemcgowan" data-related="" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+		<footer class="page-footer blue">
+			<div class="footer-copyright">
+			  <div class="container">
+			  © <script>document.write(new Date().getFullYear());</script> Jamie McGowan	
+			  <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+			  <div class="share-buttons-box">
+				  
+			  </div>			  
+			  </div>
+			</div>
+		  </footer>
+
+		  <script>
+			$(document).ready(function() {
+				alert("This website is under development.");
+				alert("Go away!");
+			});
+		  </script>
+			  
+	</body>
+</html>
