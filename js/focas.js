@@ -106,10 +106,20 @@ var loadSounds = function() {
     var wind = new Howl({src: ["./audio/Wind.aac"], loop: true, sprite: {main: [100, 33000, true]}});
     var fire = new Howl({src: ["./audio/Fire.aac"], loop: true, sprite: {main: [100, 32000, true]}});
 
+    var white_noise = new Howl({src: ["./audio/White_noise.aac"], loop: true, sprite: {main: [100, 32000, true]}});
+    var grey_noise = new Howl({src: ["./audio/Grey_noise.aac"], loop: true, sprite: {main: [100, 32000, true]}});
+    var pink_noise = new Howl({src: ["./audio/Pink_noise.aac"], loop: true, sprite: {main: [100, 32000, true]}});
+    var brown_noise = new Howl({src: ["./audio/Brown_noise.aac"], loop: true, sprite: {main: [100, 32000, true]}});
+
     sounds["rain"] = rain;
     sounds["thunder"] = thunder;
     sounds["wind"] = wind;
     sounds["fire"] = fire;
+
+    sounds["white-noise"] = white_noise;
+    sounds["grey-noise"] = grey_noise;
+    sounds["pink-noise"] = pink_noise;
+    sounds["brown-noise"] = brown_noise;
 }
 
 // Randomly select sounds to play

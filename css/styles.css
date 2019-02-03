@@ -17,8 +17,13 @@ body {
 
 .page-footer {
 	padding: 0px;
+	color: white;
 }
 
 .share-buttons-box {
 	background-color: gray;
+}
+
+.footer-copyright a {
+	color: inherit;
 }
