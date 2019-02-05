@@ -128,8 +128,9 @@ var randomlySelectSounds = function () {
     
     for(var sound in sounds) {
         toPlay = Math.round(Math.random());
-
-        if(toPlay == 1) {
+        
+        // Never select any of the noises (e.g. white noise) when randomly picking
+        if(toPlay == 1 && sound.indexOf("-noise") == -1) {
             selected.push(sound);
         }
     }
